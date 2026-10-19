@@ -1,0 +1,12 @@
+.git
+.github
+node_modules
+dist
+dist-ssr
+*.log
+*.local
+.env*
+.codex
+.agents
+.vscode
+.idea

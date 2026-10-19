@@ -1,5 +1,4 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Release and deploy
 
 on:
   # Deploy only when a version tag is pushed (for example, v1.0.0)
@@ -12,14 +11,11 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
-concurrency:
-  group: 'pages'
-  cancel-in-progress: true
-
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
+    concurrency:
+      group: 'pages'
+      cancel-in-progress: true
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -50,3 +46,58 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
+
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    concurrency:
+      group: release-${{ github.ref }}
+      cancel-in-progress: false
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+      VERSION: ${{ github.ref_name }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - name: Set image name
+        run: echo "IMAGE=ghcr.io/${GH_REPO,,}" >> "$GITHUB_ENV"
+      - name: Log in to GHCR
+        env:
+          REGISTRY_USER: ${{ github.actor }}
+        run: printf '%s' "$GH_TOKEN" | docker login ghcr.io --username "$REGISTRY_USER" --password-stdin
+      - name: Set up Docker builder
+        run: docker buildx create --use --driver docker-container
+      - name: Build and publish image
+        run: |
+          docker buildx build \
+            --platform linux/amd64,linux/arm64 \
+            --label "org.opencontainers.image.source=https://github.com/$GH_REPO" \
+            --label "org.opencontainers.image.version=$VERSION" \
+            --label "org.opencontainers.image.revision=$GITHUB_SHA" \
+            --tag "$IMAGE:$VERSION" \
+            --tag "$IMAGE:latest" \
+            --push .
+      - name: Create GitHub release
+        run: |
+          if gh release view "$VERSION" > /dev/null 2>&1; then
+            echo "Release $VERSION already exists."
+            exit 0
+          fi
+          cat > "$RUNNER_TEMP/release-notes.md" <<EOF
+          Run this release locally (open http://localhost:8080):
+
+          \`\`\`bash
+          docker run --rm -p 127.0.0.1:8080:80 $IMAGE:$VERSION
+          \`\`\`
+
+          The image supports Linux AMD64 and ARM64. Use \`$IMAGE:latest\` for the most recently published image.
+          EOF
+          gh release create "$VERSION" \
+            --verify-tag \
+            --title "$VERSION" \
+            --generate-notes \
+            --notes-file "$RUNNER_TEMP/release-notes.md" \
+            --latest
