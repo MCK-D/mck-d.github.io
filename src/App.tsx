@@ -1,19 +1,25 @@
+import { MotionConfig } from "motion/react"
+import { Contact } from "./components/portfolio/contact"
+import { Footer } from "./components/portfolio/footer"
+import { Header } from "./components/portfolio/header"
+import { Hero } from "./components/portfolio/hero"
+import { Projects } from "./components/portfolio/projects"
+import { Skills } from "./components/portfolio/skills"
+
 export function App() {
   return (
-    <>
-      <div className="flex min-h-svh p-6">
-        <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-          <div>
-            <h1 className="font-medium">Project ready!</h1>
-            <p>You may now add components and start building.</p>
-            <p>We&apos;ve already added the button component for you.</p>
-          </div>
-          <div className="font-mono text-xs text-muted-foreground">
-            (Press <kbd>d</kbd> to toggle dark mode)
-          </div>
-        </div>
+    <MotionConfig reducedMotion="user">
+      <div className="max-w-6xl mx-auto flex-col [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-6 [&_a:focus-visible]:outline-[#b84926] [&_button:focus-visible]:outline-2 [&_button:focus-visible]:outline-offset-6 [&_button:focus-visible]:outline-[#b84926]">
+        <Header />
+        <main id="main" className="pt-10 md:pt-15 px-6 md:px-16">
+          <Hero />
+          <Projects />
+          <Skills />
+          <Contact />
+        </main>
+        <Footer />
       </div>
-    </>
+    </MotionConfig>
   )
 }
 
