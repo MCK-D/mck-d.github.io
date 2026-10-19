@@ -1,6 +1,6 @@
 "use client"
 
-import { AnimatePresence, motion, MotionConfig, type ValueAnimationTransition } from "motion/react"
+import { AnimatePresence, motion, MotionConfig } from "motion/react"
 import { useState } from "react"
 import { cn } from "cn"
 

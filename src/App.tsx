@@ -1,5 +1,3 @@
-import LoadingCurtain from "@/components/ui/loading-curtain"
-import SkillFolder, { type FolderItem } from "@/components/ui/skills-folder"
 import reactLogo from "@/assets/react.svg"
 import IosAppFolder, { type FolderApp } from "@/components/ui/test";
 
@@ -54,22 +52,8 @@ const apps: FolderApp[] = [
 ];
 
 export function App() {
-  const items: FolderItem[] = [
-    { iconSrc: reactLogo, label: "React" },
-    { iconSrc: reactLogo, label: "Vite" },
-    { iconSrc: reactLogo, label: "HTML" },
-    { iconSrc: reactLogo, label: "HTML" },
-    { iconSrc: reactLogo, label: "HTML" },
-    { iconSrc: reactLogo, label: "HTML" },
-    { iconSrc: reactLogo, label: "HTML" },
-    { iconSrc: reactLogo, label: "HTML" },
-    { iconSrc: reactLogo, label: "HTML" },
-    { iconSrc: reactLogo, label: "HTML" },
-  ]
-
   return (
     <>
-    {/* <LoadingCurtain /> */}
       <div className="flex min-h-svh p-6">
         <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
           <div>
