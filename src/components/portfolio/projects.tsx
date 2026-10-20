@@ -32,35 +32,35 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="border-b border-[#deded6] py-[55px] min-[761px]:py-[77px]"
+      className="border-b border-stone-200 py-12 md:py-20"
     >
       <Reveal>
-        <div className="mb-[35px] flex flex-col items-start justify-between gap-[15px] min-[761px]:flex-row min-[761px]:items-end min-[761px]:gap-[25px] [&>div>p]:mb-4 [&>div>p]:text-[#6d7066] [&>p]:text-xs [&>p]:leading-[1.8] [&>p]:text-[#77796f]">
+        <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:gap-8 [&>div>p]:mb-4 [&>div>p]:text-stone-500 [&>p]:text-xs [&>p]:leading-loose [&>p]:text-stone-500">
           <div>
-            <h2 className="text-[30px] leading-[1.2] font-medium tracking-[-1.5px] min-[761px]:text-4xl">
-              A few things I’ve built<span className="text-[#bd4e29]">:</span>
+            <h2 className="text-3xl leading-tight font-medium tracking-tighter md:text-4xl">
+              A few things I’ve built<span className="text-amber-700">:</span>
             </h2>
           </div>
         </div>
       </Reveal>
-      <div className="grid grid-cols-1 gap-x-5 gap-y-[35px] min-[541px]:grid-cols-2 min-[761px]:gap-x-7 min-[761px]:gap-y-10">
+      <div className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 md:gap-x-8 md:gap-y-20">
         {projects.map((project, index) => (
           <Reveal
             key={project.name}
             className={index === 0 ? "group col-span-full" : "group"}
           >
             <ProjectPreview style={project.style} />
-            <div className="mt-[23px] mb-2.5 flex justify-between text-[8px] tracking-[1.3px] text-[#777b70]">
+            <div className="mt-4 mb-2.5 flex justify-between text-xs tracking-wider text-stone-500">
               <span>{project.type}</span>
               <span>CONCEPT / 0{index + 1}</span>
             </div>
-            <h3 className="text-[25px] font-medium tracking-[-0.7px]">
+            <h3 className="text-2xl font-medium tracking-tight">
               {project.name}
             </h3>
-            <p className="mt-2.5 mb-4 max-w-[600px] text-xs leading-[1.8] text-[#74776d]">
+            <p className="mt-2.5 mb-4 max-w-152 text-xs leading-loose text-stone-500">
               {project.description}
             </p>
-            <div className="flex flex-wrap gap-[7px] [&>span]:rounded [&>span]:border [&>span]:border-[#dedfd6] [&>span]:px-[9px] [&>span]:py-[5px] [&>span]:text-[9px]">
+            <div className="flex flex-wrap gap-2 [&>span]:rounded [&>span]:border [&>span]:border-stone-200 [&>span]:px-2 [&>span]:py-1 [&>span]:text-xs">
               {project.tags.map((tag) => (
                 <span key={tag}>{tag}</span>
               ))}

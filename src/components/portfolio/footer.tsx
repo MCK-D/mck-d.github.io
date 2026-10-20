@@ -1,8 +1,8 @@
 export function Footer() {
   return (
-    <footer className="flex flex-wrap items-center justify-between gap-5 border-t border-[#deded6] pt-[25px] pb-[30px] min-[541px]:flex-nowrap [&>a]:hover:text-[#bd4e29] [&>a:first-child]:text-[23px] [&>a:first-child>span]:top-1.5 [&>a:first-child>span]:text-[10px] [&>a:last-child]:text-[10px] [&>a:last-child]:text-[#77796f] [&>span]:text-[10px] [&>span]:text-[#77796f] max-[540px]:[&>span]:order-3 max-[540px]:[&>span]:w-full">
+    <footer className="flex flex-wrap items-center justify-between gap-4 border-t border-stone-200 pt-8 pb-8 sm:flex-nowrap [&>a]:hover:text-amber-700 [&>a:first-child]:text-2xl [&>a:first-child>span]:top-1.5 [&>a:first-child>span]:text-xs [&>a:last-child]:text-xs [&>a:last-child]:text-stone-500 [&>span]:text-xs [&>span]:text-stone-500 max-sm:[&>span]:order-3 max-sm:[&>span]:w-full">
       <a
-        className="text-[30px] font-[750] tracking-[-1.8px] [&>span]:relative [&>span]:top-[9px] [&>span]:ml-1 [&>span]:align-top [&>span]:text-[13px]"
+        className="text-3xl font-extrabold tracking-tighter [&>span]:relative [&>span]:top-2 [&>span]:ml-1 [&>span]:align-top [&>span]:text-sm"
         href="#home"
       >
         micka<span>®</span>

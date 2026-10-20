@@ -32,16 +32,16 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="border-b border-[#deded6] py-[55px] min-[761px]:py-[77px]"
+      className="border-b border-stone-200 py-12 md:py-20"
     >
       <Reveal>
-        <div className="mb-[35px] flex flex-col items-start justify-between gap-[15px] min-[761px]:flex-row min-[761px]:items-end min-[761px]:gap-[25px] [&>div>p]:mb-4 [&>div>p]:text-[#6d7066] [&>p]:text-xs [&>p]:leading-[1.8] [&>p]:text-[#77796f]">
+        <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:gap-8 [&>div>p]:mb-4 [&>div>p]:text-stone-500 [&>p]:text-xs [&>p]:leading-loose [&>p]:text-stone-500">
           <div>
-            <p className="mb-[25px] flex items-center gap-2.5 text-[10px] font-[550] tracking-[1.8px]">
+            <p className="mb-8 flex items-center gap-2.5 text-xs font-medium tracking-widest">
               02 / MY TOOLKIT
             </p>
-            <h2 className="text-[30px] leading-[1.2] font-medium tracking-[-1.5px] min-[761px]:text-4xl">
-              What I work with<span className="text-[#bd4e29]">.</span>
+            <h2 className="text-3xl leading-tight font-medium tracking-tighter md:text-4xl">
+              What I work with<span className="text-amber-700">.</span>
             </h2>
           </div>
           <p>
@@ -51,18 +51,18 @@ export function Skills() {
           </p>
         </div>
       </Reveal>
-      <div className="mt-[30px] grid grid-cols-1 gap-8 min-[541px]:mt-[45px] min-[541px]:grid-cols-3 min-[541px]:gap-5 min-[761px]:gap-8">
+      <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-12 sm:grid-cols-3 sm:gap-4 md:gap-8">
         {skills.map(({ icon: Icon, title, description, items }) => (
           <Reveal
             key={title}
-            className="min-[541px]:[&>div]:max-w-[260px] [&>h3]:text-xl [&>h3]:tracking-[-0.4px] min-[541px]:[&>h3]:text-base min-[761px]:[&>h3]:text-lg [&>p]:mt-[9px] [&>p]:mb-[15px] [&>p]:text-[11px] [&>p]:text-[#77796f] min-[541px]:[&>p]:mb-[22px] [&>svg]:mb-3 [&>svg]:text-[#b95532] min-[541px]:[&>svg]:mb-[22px]"
+            className="sm:[&>div]:max-w-64 [&>h3]:text-xl [&>h3]:tracking-tight sm:[&>h3]:text-base md:[&>h3]:text-lg [&>p]:mt-2 [&>p]:mb-4 [&>p]:text-xs [&>p]:text-stone-500 sm:[&>p]:mb-4 [&>svg]:mb-3 [&>svg]:text-amber-700 sm:[&>svg]:mb-4"
           >
             <Icon size={25} strokeWidth={1.4} />
-            <h3 className="text-[25px] font-medium tracking-[-0.7px]">
+            <h3 className="text-2xl font-medium tracking-tight">
               {title}
             </h3>
             <p>{description}</p>
-            <div className="flex flex-wrap gap-[7px] [&>span]:rounded [&>span]:border [&>span]:border-[#dedfd6] [&>span]:px-[9px] [&>span]:py-[5px] [&>span]:text-[9px]">
+            <div className="flex flex-wrap gap-2 [&>span]:rounded [&>span]:border [&>span]:border-stone-200 [&>span]:px-2 [&>span]:py-1 [&>span]:text-xs">
               {items.map((item) => (
                 <span key={item}>{item}</span>
               ))}
@@ -70,7 +70,7 @@ export function Skills() {
           </Reveal>
         ))}
       </div>
-      <p className="mt-[25px] text-[10px] text-[#77796f]">
+      <p className="mt-8 text-xs text-stone-500">
         Sample toolkit — ready to personalize with your skills.
       </p>
     </section>

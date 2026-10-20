@@ -45,7 +45,7 @@ const layoutSpring = {
 };
 
 const iconClassName =
-  "block h-14 w-14 shrink-0 select-none object-contain sm:h-[68px] sm:w-[68px]";
+  "block h-16 w-16 shrink-0 select-none object-contain sm:h-16 sm:w-16";
 
 /**
  * Icons without a preview animate from the mini-grid's center.
@@ -153,7 +153,7 @@ function EmergingIcon({
   return (
     <span
       ref={slotRef}
-      className="relative block h-14 w-14 shrink-0 sm:h-[68px] sm:w-[68px]"
+      className="relative block h-16 w-16 shrink-0 sm:h-16 sm:w-16"
     >
       <img
         ref={scope}
@@ -235,7 +235,7 @@ export default function IosAppFolder({
           ref={containerRef}
           style={{ minHeight: reservedHeight }}
           className={`relative isolate grid w-full place-items-center
-            rounded-3xl bg-[#f7f8fa] text-slate-800 ${className}`}
+            rounded-3xl bg-slate-50 text-slate-800 ${className}`}
         >
           <AnimatePresence initial={false} mode="sync">
             {!isOpen && (
@@ -247,7 +247,7 @@ export default function IosAppFolder({
                 aria-expanded={false}
                 onClick={openFolder}
                 className="relative col-start-1 row-start-1 self-start flex cursor-pointer flex-col
-                  items-center gap-2.5 rounded-[32px]
+                  items-center gap-2.5 rounded-4xl
                   focus-visible:outline-none focus-visible:ring-2
                   focus-visible:ring-blue-500 focus-visible:ring-offset-4"
                 initial={{ opacity: 0 }}
@@ -258,16 +258,16 @@ export default function IosAppFolder({
                 <span
                   aria-hidden="true"
                   className="grid h-36 w-36 grid-cols-2 grid-rows-2
-                    gap-2.5 rounded-[30px] border border-black/5
+                    gap-2.5 rounded-4xl border border-black/5
                     bg-white p-3
-                    shadow-[0_16px_36px_rgba(0,0,0,0.12)]"
+                    shadow-xl shadow-black/10"
                 >
                   {largePreview.map((app) => (
                     <span
                       key={app.id}
                       className="flex items-center justify-center"
                     >
-                      {renderSharedIcon(app, "h-[54px] w-[54px]")}
+                      {renderSharedIcon(app, "h-12 w-12")}
                     </span>
                   ))}
 
@@ -281,7 +281,7 @@ export default function IosAppFolder({
                         key={app.id}
                         className="flex items-center justify-center"
                       >
-                        {renderSharedIcon(app, "h-[25px] w-[25px]")}
+                        {renderSharedIcon(app, "h-8 w-8")}
                       </span>
                     ))}
                   </span>
@@ -306,7 +306,7 @@ export default function IosAppFolder({
                 <div className="pointer-events-none relative m-auto w-full max-w-2xl">
                   <motion.h2
                     id={titleId}
-                    className="mb-6 text-center text-xl font-medium"
+                    className="mb-8 text-center text-xl font-medium"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -315,7 +315,7 @@ export default function IosAppFolder({
                     {title}
                   </motion.h2>
 
-                  <div className="grid grid-cols-4 gap-x-3 gap-y-5 sm:gap-x-6">
+                  <div className="grid grid-cols-4 gap-x-3 gap-y-4 sm:gap-x-8">
                     {items.map((app) => (
                       <button
                         key={app.id}
@@ -339,8 +339,8 @@ export default function IosAppFolder({
                         )}
 
                         <motion.span
-                          className="w-full text-center text-[11px]
-                            leading-tight sm:text-[13px]"
+                          className="w-full text-center text-xs
+                            leading-tight sm:text-sm"
                           initial={{ opacity: 0 }}
                           animate={{
                             opacity: 1,
@@ -426,7 +426,7 @@ function FolderOverlay({
       aria-modal="true"
       aria-labelledby={titleId}
       tabIndex={-1}
-      className="fixed inset-0 z-[1000] isolate text-slate-800 outline-none"
+      className="fixed inset-0 z-1000 isolate text-slate-800 outline-none"
       onKeyDown={(event) => {
         if (event.key === "Escape") {
           event.preventDefault();
@@ -460,7 +460,7 @@ function FolderOverlay({
       {/* Fade the backdrop only; the icons must stay visible while returning. */}
       <motion.div
         aria-hidden="true"
-        className="absolute inset-0 bg-[#f7f8fa]/90 backdrop-blur-xl"
+        className="absolute inset-0 bg-slate-50/90 backdrop-blur-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -469,7 +469,7 @@ function FolderOverlay({
 
       <motion.div
         layoutScroll
-        className="absolute inset-0 flex overflow-y-auto overscroll-contain px-6 py-20 sm:px-12"
+        className="absolute inset-0 flex overflow-y-auto overscroll-contain px-8 py-20 sm:px-12"
         onClick={(event) => {
           if (event.target === event.currentTarget) onClose();
         }}
@@ -481,7 +481,7 @@ function FolderOverlay({
         type="button"
         aria-label={`Close ${title} folder`}
         onClick={onClose}
-        className="absolute right-5 top-5 z-10 grid h-10 w-10 cursor-pointer
+        className="absolute right-4 top-4 z-10 grid h-12 w-12 cursor-pointer
           place-items-center rounded-full bg-white/70 text-2xl shadow-sm
           hover:bg-white focus-visible:outline-none focus-visible:ring-2
           focus-visible:ring-blue-500"

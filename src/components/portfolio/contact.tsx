@@ -5,19 +5,19 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="pt-[55px] pb-[65px] min-[761px]:pt-[76px] [&>div>p:first-child]:text-[#6d7066]"
+      className="pt-12 pb-16 md:pt-20 [&>div>p:first-child]:text-stone-500"
     >
       <Reveal>
-        <p className="mb-[25px] flex items-center gap-2.5 text-[10px] font-[550] tracking-[1.8px]">
+        <p className="mb-8 flex items-center gap-2.5 text-xs font-medium tracking-widest">
           03 / SAY HELLO
         </p>
-        <div className="flex items-center justify-between gap-3 min-[541px]:gap-[30px] [&_h2]:text-[35px] [&_h2]:tracking-[-2px] min-[541px]:[&_h2]:text-[clamp(36px,4.8vw,57px)] [&_p]:mt-6 [&_p]:text-xs [&_p]:leading-[1.9] [&_p]:text-[#6a6c64]">
+        <div className="flex items-center justify-between gap-3 sm:gap-8 [&_h2]:text-4xl [&_h2]:tracking-tighter sm:[&_h2]:text-5xl [&_p]:mt-8 [&_p]:text-xs [&_p]:leading-loose [&_p]:text-stone-500">
           <div>
-            <h2 className="text-[30px] leading-[1.2] font-medium tracking-[-1.5px] min-[761px]:text-4xl">
+            <h2 className="text-3xl leading-tight font-medium tracking-tighter md:text-4xl">
               Good things start
               <br />
               with a{" "}
-              <span className="font-[Georgia,'Times_New_Roman',serif] font-normal italic">
+              <span className="font-serif font-normal italic">
                 conversation.
               </span>
             </h2>
@@ -28,7 +28,7 @@ export function Contact() {
             </p>
           </div>
           <a
-            className="grid size-[55px] shrink-0 place-items-center rounded-full bg-[#bd4e29] text-white transition-transform duration-250 hover:rotate-45 motion-reduce:transition-none min-[541px]:size-[100px] max-[540px]:[&>svg]:w-[27px]"
+            className="grid size-12 shrink-0 place-items-center rounded-full bg-amber-700 text-white transition-transform duration-250 hover:rotate-45 motion-reduce:transition-none sm:size-24 max-sm:[&>svg]:w-8"
             href="mailto:hello@example.com"
             aria-label="Email hello@example.com"
           >
@@ -36,13 +36,13 @@ export function Contact() {
           </a>
         </div>
         <a
-          className="mt-[27px] inline-flex items-center gap-3 border-b border-[#a9ad9f] pb-2 text-sm"
+          className="mt-8 inline-flex items-center gap-3 border-b border-stone-400 pb-2 text-sm"
           href="mailto:hello@example.com"
         >
           <Mail size={18} />
           hello@example.com <ArrowUpRight size={17} />
         </a>
-        <p className="mt-[25px] text-[10px] text-[#77796f]">
+        <p className="mt-8 text-xs text-stone-500">
           Placeholder email — replace with your own.
         </p>
       </Reveal>

@@ -9,9 +9,9 @@ import { Skills } from "./components/portfolio/skills"
 export function App() {
   return (
     <MotionConfig reducedMotion="user">
-      <div className="max-w-6xl mx-auto flex-col [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-6 [&_a:focus-visible]:outline-[#b84926] [&_button:focus-visible]:outline-2 [&_button:focus-visible]:outline-offset-6 [&_button:focus-visible]:outline-[#b84926]">
+      <div className="max-w-6xl mx-auto flex-col [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-8 [&_a:focus-visible]:outline-amber-700 [&_button:focus-visible]:outline-2 [&_button:focus-visible]:outline-offset-8 [&_button:focus-visible]:outline-amber-700">
         <Header />
-        <main id="main" className="pt-10 md:pt-15 px-6 md:px-16">
+        <main id="main" className="pt-12 md:pt-16 px-8 md:px-16">
           <Hero />
           <Projects />
           <Skills />

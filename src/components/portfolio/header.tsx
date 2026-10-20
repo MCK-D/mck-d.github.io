@@ -19,12 +19,12 @@ export function Header() {
   return (
     <motion.header
       animate={{
-        y: hidden ? "var(--header-height)" : 0,
+        y: hidden ? "-100%" : 0,
         opacity: hidden ? 0 : 1,
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
 
-      className="fixed max-w-6xl w-full mx-auto flex flex-row h-20 md:h-25 items-center border-b border-stone-200 bg-background/60 backdrop-blur-xs z-100 [--header-height:-80px] md:[header-height:-100px] max-sm:px-4"
+      className="fixed max-w-6xl w-full mx-auto flex flex-row h-20 md:h-24 items-center border-b border-stone-200 bg-background/60 backdrop-blur-xs z-100 max-sm:px-4"
     >
       <a
         className="text-4xl font-extrabold tracking-tighter"
@@ -52,7 +52,7 @@ export function Header() {
           ["Skills", "skills"],
           ["Let’s talk", "contact"],
         ].map(([label, id]) => (
-          <a key={id} href={`#${id}`} onClick={() => setOpen(false)} className="flex items-center gap-2 p-2 hover:text-amber-800 sm:p-0 last-child:rounded-sm last-child:border last-child:border-[#bfc0b7] last-child:px-4 last-child:py-3">
+          <a key={id} href={`#${id}`} onClick={() => setOpen(false)} className="flex items-center gap-2 p-2 hover:text-amber-800 sm:p-0 last-child:rounded-sm last-child:border last-child:border-stone-300 last-child:px-4 last-child:py-3">
             {label}
             {id === "contact" && <ArrowUpRight size={16} />}
           </a>

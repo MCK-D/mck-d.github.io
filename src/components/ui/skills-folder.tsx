@@ -50,7 +50,7 @@ export default function SkillFolder({ title = "Creator Studio", items = [] }: { 
                             onClick={() => setIsOpen(true)}
                         >
                             <div className="folder-preview">
-                                <div className="folder-grid grid grid-cols-2 grid-rows-2 gap-4 w-50">
+                                <div className="folder-grid grid grid-cols-2 grid-rows-2 gap-4 w-52">
                                     { items.slice(0, 3).map((item, i) => 
                                         <AppTile item={item} layoutId={"" + i} />
                                     )}
