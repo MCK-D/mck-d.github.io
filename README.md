@@ -1,4 +1,31 @@
-# React + TypeScript + Vite + shadcn/ui
+# Micka Daoud — Portfolio
+
+A single-page React and TypeScript portfolio, with locally bundled Geist typography, responsive layouts, and CSS/Web Animations API motion.
+
+## Development
+
+```bash
+pnpm install
+pnpm dev
+pnpm build
+pnpm preview
+pnpm lint
+```
+
+## Editing the portfolio
+
+- `RESUME.md` is the source of truth for biographical content.
+- `src/data/portfolio.ts` contains contact links, projects, experience, and skill categories.
+- `src/components/portfolio/` contains the individual page sections.
+- `timeline` in `src/data/portfolio.ts` defines the chronological experience events; `src/hooks/use-timeline.ts` controls navigation and the six-second idle delay; `src/styles/timeline.css` owns its presentation. Autoplay pauses during interaction and is disabled for reduced motion.
+- `src/styles/base.css` defines shared tokens and foundations; `portfolio.css` owns layouts; `motion.css` owns animation and reduced-motion overrides.
+- `src/components/ui/loading-curtain.tsx` runs the short introduction once per browser tab session. Clear the `mck-intro` sessionStorage key to replay it. Reduced-motion users skip it.
+
+### Add project screenshots or footage
+
+The previews intentionally use empty, plain divs. Add your files to `public/projects/` and replace the contents of `src/components/portfolio/project-preview.tsx` with an image or video using that path. Keep the outer `.project-preview` wrapper to preserve the responsive aspect ratio. Use `width: 100%; height: 100%; object-fit: cover` for media; provide meaningful alt text for images, and controls/posters for footage. Remove the wrapper’s placeholder `role` and `aria-label` when adding real media.
+
+There are no invented project URLs. Add verified project links to the data file when you are ready to link live work. The older projects are available through the expandable archive.
 
 ## Releases and Docker
 
@@ -39,24 +66,4 @@ To build and run from source:
 ```bash
 docker build -t portfolio .
 docker run --rm -p 127.0.0.1:8080:80 portfolio
-```
-
-This is a template for a new Vite project with React, TypeScript, and shadcn/ui.
-
-## Adding components
-
-To add components to your app, run the following command:
-
-```bash
-npx shadcn@latest add button
-```
-
-This will place the ui components in the `src/components` directory.
-
-## Using components
-
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button"
 ```

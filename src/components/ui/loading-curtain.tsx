@@ -1,34 +1,42 @@
-import { Button } from "@/components/ui/button"
-import { motion, AnimatePresence } from "motion/react"
-import React, { useState } from "react"
-import { Typewriter } from "@/components/ui/typewriter"
+import { useEffect, useState } from "react"
 
-const LoadingCurtain: React.FunctionComponent = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [pressed, setPressed] = useState<boolean>(false);
-
+export default function LoadingCurtain() {
+  const [visible, setVisible] = useState(() => {
+    try {
+      return (
+        !sessionStorage.getItem("mck-intro") &&
+        !matchMedia("(prefers-reduced-motion: reduce)").matches
+      )
+    } catch {
+      return false
+    }
+  })
+  useEffect(() => {
+    if (!visible) return
+    const timer = window.setTimeout(() => {
+      setVisible(false)
+      try {
+        sessionStorage.setItem("mck-intro", "seen")
+      } catch {
+        /* Storage is optional. */
+      }
+    }, 2100)
+    return () => clearTimeout(timer)
+  }, [visible])
+  if (!visible) return null
   return (
-    <AnimatePresence>
-      {isLoading && <motion.div
-        className="flex flex-col items-center justify-center absolute w-screen h-screen bg-emerald-950"
-        initial={{ left: "-100%" }}
-        animate={{ left: 0 }}
-        exit={{ left: "100%", transition: { delay: .65 } }}
-      >
-        <motion.div animate={{ scale: pressed ? .9 : 1 }} >
-          <Typewriter text="Mck" speed={400} delay={500} className="text-8xl font-bold uppercase tracking-wider" />
-        </motion.div>
-        <Button
-          className="mt-2"
-          onClick={() => setIsLoading(false)}
-          onMouseDown={() => setPressed(true)}
-           onMouseUp={() => setPressed(false)}
-        >
-          Enter
-        </Button>
-      </motion.div>}
-    </AnimatePresence>
+    <div className="intro" aria-hidden="true">
+      <div className="intro-panel intro-panel-top" />
+      <div className="intro-panel intro-panel-bottom" />
+      <div className="intro-content">
+        <span>Micka Daoud</span>
+        <div className="intro-words">
+          <span>Think.</span>
+          <span>Make.</span>
+          <span>Move.</span>
+        </div>
+        <span>Design meets development</span>
+      </div>
+    </div>
   )
 }
-
-export default LoadingCurtain;

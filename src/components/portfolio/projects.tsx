@@ -1,73 +1,76 @@
-import { Reveal } from "./reveal"
+import { useState } from "react"
+import { Plus } from "lucide-react"
+import { projects, archive } from "../../data/portfolio"
 import { ProjectPreview } from "./project-preview"
-
-const projects = [
-  {
-    name: "Forma",
-    type: "PRODUCTIVITY APP",
-    description:
-      "A calmer space to organize projects, capture ideas, and focus on what matters.",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    style: "forma",
-  },
-  {
-    name: "Objects",
-    type: "E-COMMERCE EXPERIENCE",
-    description:
-      "A considered storefront for everyday objects, with a simple, seamless shopping experience.",
-    tags: ["React", "UI Design", "Motion"],
-    style: "objects",
-  },
-  {
-    name: "Atmos",
-    type: "WEATHER DASHBOARD",
-    description:
-      "The forecast, at a glance. A little exploration of data, interaction, and beautiful interfaces.",
-    tags: ["TypeScript", "API Integration", "CSS"],
-    style: "atmos",
-  },
-]
-
+import { Reveal } from "./reveal"
+import { AnimatedCollapse } from "../ui/animated-collapse"
 export function Projects() {
+  const [expanded, setExpanded] = useState(false)
   return (
     <section
       id="projects"
-      className="border-b border-stone-200 py-12 md:py-20"
+      className="projects section-pad"
+      aria-labelledby="work-title"
     >
-      <Reveal>
-        <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:gap-8 [&>div>p]:mb-4 [&>div>p]:text-stone-500 [&>p]:text-xs [&>p]:leading-loose [&>p]:text-stone-500">
-          <div>
-            <h2 className="text-3xl leading-tight font-medium tracking-tighter md:text-4xl">
-              A few things I’ve built<span className="text-amber-700">:</span>
-            </h2>
-          </div>
-        </div>
-      </Reveal>
-      <div className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 md:gap-x-8 md:gap-y-20">
+      <div className="section-heading">
+        <Reveal>
+          <h2 id="work-title">
+            Selected work<span className="accent-dot">.</span>
+          </h2>
+        </Reveal>
+        <p>
+          A few things I’ve
+          <br />
+          brought to life.
+        </p>
+      </div>
+      <div className="project-grid">
         {projects.map((project, index) => (
           <Reveal
             key={project.name}
-            className={index === 0 ? "group col-span-full" : "group"}
+            className={`project project-${index}`}
+            delay={(index % 2) * 80}
           >
-            <ProjectPreview style={project.style} />
-            <div className="mt-4 mb-2.5 flex justify-between text-xs tracking-wider text-stone-500">
-              <span>{project.type}</span>
-              <span>CONCEPT / 0{index + 1}</span>
-            </div>
-            <h3 className="text-2xl font-medium tracking-tight">
-              {project.name}
-            </h3>
-            <p className="mt-2.5 mb-4 max-w-152 text-xs leading-loose text-stone-500">
-              {project.description}
-            </p>
-            <div className="flex flex-wrap gap-2 [&>span]:rounded [&>span]:border [&>span]:border-stone-200 [&>span]:px-2 [&>span]:py-1 [&>span]:text-xs">
-              {project.tags.map((tag) => (
-                <span key={tag}>{tag}</span>
-              ))}
-            </div>
+            <article>
+              <ProjectPreview name={project.name} color={project.color} />
+              <h3>{project.name}</h3>
+              <div className="project-meta">
+                <span>{project.category}</span>
+                <span>{project.year}</span>
+              </div>
+              <p>{project.description}</p>
+              <ul className="tags" aria-label="Technologies">
+                {project.tags.map((tag) => (
+                  <li key={tag}>{tag}</li>
+                ))}
+              </ul>
+            </article>
           </Reveal>
         ))}
       </div>
+      <button
+        className="archive-toggle"
+        onClick={() => setExpanded(!expanded)}
+        aria-expanded={expanded}
+        aria-controls="project-archive"
+      >
+        <span>
+          {expanded ? "Close the archive" : "There’s more in the archive"}
+        </span>
+        <Plus aria-hidden="true" />
+      </button>
+      <AnimatedCollapse id="project-archive" open={expanded}>
+        {archive.map((project) => (
+          <article className="archive-row" key={project.name}>
+            <h3>{project.name}</h3>
+            <div>
+              <p>{project.description}</p>
+              <span>{project.tags}</span>
+            </div>
+            <span>{project.year}</span>
+          </article>
+        ))}
+      </AnimatedCollapse>
     </section>
   )
 }
