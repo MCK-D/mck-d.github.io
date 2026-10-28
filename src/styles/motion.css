@@ -10,7 +10,7 @@
   width: 100%;
   height: 50.1%;
   background: var(--accent);
-  animation: curtain-up 0.7s 3.3s var(--ease-in-out) both;
+  animation: curtain-up 0.7s 4.75s var(--ease-in-out) both;
 }
 .intro-panel-top {
   top: 0;
@@ -24,7 +24,7 @@
   inset: 0;
   display: grid;
   place-items: center;
-  animation: intro-away 0.35s 3.15s var(--ease-out) both;
+  animation: intro-away 0.25s 4.7s var(--ease-out) both;
 }
 .intro-wordmark {
   display: block;
@@ -51,7 +51,7 @@
   animation: intro-letter-in 600ms var(--ease-out) both;
 }
 .intro-wave-rise {
-  animation: intro-liquid-rise 2.2s 0.7s var(--ease-in-out) both;
+  animation: intro-liquid-rise 4.5s 0.2s var(--ease-in-out) both;
 }
 .intro-wave-drift {
   animation: intro-liquid-drift 1.4s linear infinite;

@@ -13,7 +13,7 @@ export default function LoadingCurtain({
     { character: "k", x: 395, width: 170 },
   ]
   useEffect(() => {
-    const timer = window.setTimeout(onComplete, 4100)
+    const timer = window.setTimeout(onComplete, 5500)
     const media = matchMedia("(prefers-reduced-motion: reduce)")
     const onPreferenceChange = () => {
       if (media.matches) onComplete()
