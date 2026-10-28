@@ -19,7 +19,7 @@ pnpm lint
 - `src/components/portfolio/` contains the individual page sections.
 - `timeline` in `src/data/portfolio.ts` defines the chronological experience events; `src/hooks/use-timeline.ts` controls navigation and the six-second idle delay; `src/styles/timeline.css` owns its presentation. Autoplay pauses during interaction and is disabled for reduced motion.
 - `src/styles/base.css` defines shared tokens and foundations; `portfolio.css` owns layouts; `motion.css` owns animation and reduced-motion overrides.
-- `src/components/ui/loading-curtain.tsx` runs the short introduction once per browser tab session. Clear the `mck-intro` sessionStorage key to replay it. Reduced-motion users skip it.
+- `src/components/ui/loading-curtain.tsx` slides in each outlined letter of “mck”, then fills the word from bottom to top with a moving wave on every refresh, then opens the curtain (about 4.1 seconds total). Reduced-motion users skip it; Escape dismisses it. The page remains inert until the introduction ends.
 
 ### Add project screenshots or footage
 
