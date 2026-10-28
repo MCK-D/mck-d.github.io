@@ -41,18 +41,25 @@ export function About() {
         </div>
       </div>
       <Skills />
-      <div className="language-line">
-        <span>Also speaking</span>
-        <p>
-          French <span>Native</span>
-        </p>
-        <p>
-          English <span>Fluent</span>
-        </p>
-        <p>
-          Spanish <span>Intermediate</span>
-        </p>
-      </div>
+      <Reveal>
+        <section className="spoken-languages" aria-labelledby="languages-title">
+          <h3 id="languages-title">Spoken languages</h3>
+          <dl className="language-list">
+            <div>
+              <dt>French</dt>
+              <dd>Native</dd>
+            </div>
+            <div>
+              <dt>English</dt>
+              <dd>Fluent</dd>
+            </div>
+            <div>
+              <dt>Spanish</dt>
+              <dd>Intermediate</dd>
+            </div>
+          </dl>
+        </section>
+      </Reveal>
     </section>
   )
 }

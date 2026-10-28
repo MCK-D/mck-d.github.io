@@ -1,13 +1,21 @@
 :root {
   font-family: "Geist Variable", sans-serif;
-  color: #22231f;
-  background: #f3f1e9;
+  color: #352c24;
+  background: #f4efe5;
   font-synthesis: none;
-  --paper: #f3f1e9;
-  --ink: #22231f;
-  --blue: #234bea;
-  --muted: #62635c;
-  --line: #d3d2c8;
+  --paper: #f4efe5;
+  --ink: #352c24;
+  --accent: #365744;
+  --muted: #746557;
+  --line: #d5c7b5;
+  --sand: #d5b994;
+  --on-accent-muted: #e5eadb;
+  --accent-border: #a2b39a;
+  --on-ink-muted: #d8cab8;
+  --preview-clay: #c4aa91;
+  --preview-sage: #bac4aa;
+  --preview-sand: #e1cfab;
+  --preview-moss: #9ca78c;
   --gutter: clamp(22px, 4.2vw, 80px);
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
@@ -18,7 +26,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 110px;
-  scrollbar-color: var(--blue) var(--paper);
+  scrollbar-color: var(--accent) var(--paper);
 }
 body {
   margin: 0;
@@ -51,7 +59,7 @@ a:focus-visible {
   outline-offset: 6px;
 }
 ::selection {
-  background: var(--blue);
+  background: var(--accent);
   color: var(--paper);
 }
 h1,

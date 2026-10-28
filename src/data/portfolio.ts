@@ -13,7 +13,7 @@ export const projects = [
     year: "Ongoing",
     category: "Web & AI",
     tags: ["Next.js", "AI", "Tailwind CSS"],
-    color: "blue",
+    color: "clay",
   },
   {
     name: "HypurrOTC",
@@ -21,7 +21,7 @@ export const projects = [
     year: "2025",
     category: "Web3",
     tags: ["React", "Smart contracts", "Web3"],
-    color: "lavender",
+    color: "sage",
   },
   {
     name: "Git GUI",
@@ -29,7 +29,7 @@ export const projects = [
     year: "2024",
     category: "Developer tools",
     tags: ["Flutter", "Git"],
-    color: "yellow",
+    color: "sand",
   },
   {
     name: "TrelloClone",
@@ -37,7 +37,7 @@ export const projects = [
     year: "2024",
     category: "Web & mobile",
     tags: ["AdonisJS", "MySQL", "Flutter"],
-    color: "green",
+    color: "moss",
   },
 ]
 

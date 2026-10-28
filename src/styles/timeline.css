@@ -30,7 +30,7 @@
   right: 0;
   height: 8px;
   border-radius: 8px;
-  background: var(--blue);
+  background: var(--accent);
   transform-origin: left;
 }
 .timeline-track {
@@ -44,7 +44,7 @@
   padding-right: calc(100% - var(--focus-inset) - var(--event-width));
   scroll-padding-left: var(--focus-inset);
   scrollbar-width: thin;
-  scrollbar-color: var(--blue) var(--line);
+  scrollbar-color: var(--accent) var(--line);
   position: relative;
 }
 .timeline-event {
@@ -75,14 +75,14 @@
   height: 32px;
   border-radius: 50%;
   background: var(--paper);
-  border: 7px solid var(--blue);
+  border: 7px solid var(--accent);
   transition:
     background 200ms ease,
     transform 250ms var(--ease-out);
 }
 .timeline-event[data-active="true"] .timeline-node {
-  background: var(--blue);
-  border-color: var(--blue);
+  background: var(--accent);
+  border-color: var(--accent);
   transform: scale(1);
 }
 .timeline-trigger {
@@ -107,7 +107,7 @@
   color: var(--ink);
 }
 .timeline-event[data-active="true"] .timeline-date {
-  color: var(--blue);
+  color: var(--accent);
 }
 .timeline-copy {
   display: flex;
@@ -149,7 +149,7 @@
   padding: 12px 0;
   margin-top: 12px;
   font-size: 13px;
-  color: var(--blue);
+  color: var(--accent);
 }
 .timeline-detail-trigger svg {
   transition: transform 200ms var(--ease-out);
@@ -175,7 +175,7 @@
   transition: background 180ms ease;
 }
 .timeline-pagination [aria-current] span {
-  background: var(--blue);
+  background: var(--accent);
 }
 .timeline-count {
   font-size: 13px;
@@ -218,7 +218,7 @@
   color: var(--paper);
   border-radius: 16px;
   padding: 26px;
-  box-shadow: 0 16px 45px #22231f28;
+  box-shadow: 0 16px 45px #352c2428;
   transform-origin: var(--transform-origin);
   transition:
     transform 200ms var(--ease-out),
@@ -246,7 +246,7 @@
   background: transparent;
 }
 .timeline-detail-note {
-  color: #d0cfc4;
+  color: var(--on-ink-muted);
   font-size: 13px;
   margin-bottom: 18px;
 }
@@ -254,7 +254,7 @@
   line-height: 1.6;
 }
 .timeline-popover .tags {
-  color: #d0cfc4;
+  color: var(--on-ink-muted);
 }
 @media (hover: hover) and (pointer: fine) {
   .timeline-detail-trigger:hover svg {

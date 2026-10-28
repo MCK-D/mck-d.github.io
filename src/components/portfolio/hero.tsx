@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react"
+import { InteractiveName } from "./interactive-name"
 export function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
@@ -15,12 +16,7 @@ export function Hero() {
         </p>
       </div>
       <div className="hero-name">
-        <h1 id="hero-title">
-          <span>Micka</span>
-          <span>
-            Daoud<span className="name-period">.</span>
-          </span>
-        </h1>
+        <InteractiveName />
         <div className="hero-stamp" aria-hidden="true">
           <svg viewBox="0 0 100 100">
             <path d="M50 5V95M5 50H95M18 18L82 82M18 82L82 18" />
