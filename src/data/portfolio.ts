@@ -9,6 +9,7 @@ export const profile = {
 export const projects = [
   {
     name: "Jobigo",
+    video: "/jobigo_showcase.mp4",
     description: "An AI assistant for job seekers.",
     year: "Ongoing",
     category: "Web & AI",
@@ -17,6 +18,7 @@ export const projects = [
   },
   {
     name: "HypurrOTC",
+    video: "/hypurr_otc_showcase.mp4",
     description: "An over-the-counter NFT trading platform.",
     year: "2025",
     category: "Web3",

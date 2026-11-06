@@ -32,7 +32,11 @@ export function Projects() {
             delay={(index % 2) * 80}
           >
             <article>
-              <ProjectPreview name={project.name} color={project.color} />
+              <ProjectPreview
+                name={project.name}
+                color={project.color}
+                video={project.video}
+              />
               <h3>{project.name}</h3>
               <div className="project-meta">
                 <span>{project.category}</span>

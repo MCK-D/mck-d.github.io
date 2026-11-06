@@ -201,10 +201,32 @@ h2 {
   margin-top: 145px;
 }
 .project-preview {
-  aspect-ratio: 1.3;
+  aspect-ratio: 16 / 10;
   width: 100%;
   transition: transform 0.65s var(--ease-out);
   transform-origin: center;
+}
+.project-preview-video {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.project-video-frame {
+  width: 84%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 18px 45px rgb(0 0 0 / 18%);
+  transform: rotate(-5deg) scale(0.92);
+  opacity: 0.85;
+  transition:
+    transform 0.65s var(--ease-out),
+    opacity 0.65s var(--ease-out),
+    box-shadow 0.65s var(--ease-out);
+}
+.project-video-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .preview-clay {
   background: var(--preview-clay);
@@ -217,10 +239,6 @@ h2 {
 }
 .preview-moss {
   background: var(--preview-moss);
-}
-.project-1 .project-preview,
-.project-3 .project-preview {
-  aspect-ratio: 1.05;
 }
 .project-meta {
   display: flex;
@@ -549,8 +567,13 @@ h2 {
   .round-link:hover .round-icon {
     transform: translateY(5px);
   }
-  .project:hover .project-preview {
+  .project:hover .project-preview:not(.project-preview-video) {
     transform: scale(0.985) rotate(-0.7deg);
+  }
+  .project-preview-video:hover .project-video-frame {
+    transform: rotate(0deg) scale(1.07);
+    opacity: 1;
+    box-shadow: 0 24px 55px rgb(0 0 0 / 22%);
   }
   .contact-social-grid a:hover svg {
     transform: translate(10px, -10px);
@@ -683,10 +706,6 @@ h2 {
   .project-1,
   .project-3 {
     margin-top: 0;
-  }
-  .project-1 .project-preview,
-  .project-3 .project-preview {
-    aspect-ratio: 1.3;
   }
   .project h3 {
     font-size: 30px;
