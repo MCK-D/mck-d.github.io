@@ -46,11 +46,8 @@ export function Contact() {
     >
       <div className="contact-intro">
         <p>
-          Have a project in mind?
-          <br />
-          Or just want to say hello?
+          Wanna say hi?
         </p>
-        <span>Let’s make it happen.</span>
       </div>
       <h2 id="contact-title">
         <button
@@ -80,8 +77,8 @@ export function Contact() {
             <span>LinkedIn</span>
             <ArrowUpRight aria-hidden="true" />
           </a>
-          <a href={`mailto:${profile.email}`}>
-            <span>Email</span>
+          <a href={profile.behance} target="_blank" rel="noreferrer">
+            <span>Behance</span>
             <ArrowUpRight aria-hidden="true" />
           </a>
         </div>

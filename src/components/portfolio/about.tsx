@@ -10,32 +10,36 @@ export function About() {
       <div className="about-layout">
         <Reveal>
           <h2 id="about-title">
-            A curious mind.
-            <br />A maker’s hands.
+            Wanna get to know
+            <br />me better?
           </h2>
         </Reveal>
         <div className="about-copy">
           <Reveal>
             <p className="lead">
-              I’m Micka, a developer who enjoys the space where engineering
-              meets design.
+              I’m Micka. I am 21, and I've been writing lines of code since 2018 (and counting).
             </p>
             <p>
-              From rebuilding web applications at Trusty to developing mobile
-              apps at Skyhook, I’ve worked across interfaces, APIs, and the
-              details that make a product feel right.
+              I like all aspects of software engineering, whether it is getting
+              headaches over low level algorithmic problems or spending days fine
+              tuning web interfaces.
             </p>
             <p>
-              My studies have taken me from EPITECH in Nice to California State
-              University San Marcos. Different places, new perspectives, and
-              always something to learn.
+              I've had the opportunity to work with several startups where I had
+              the responsibility to rebuild web applications and working across
+              interfaces, APIs and databases.
+            </p>
+            <p>
+              My studies (and my love for summer vibes) have taken me to Nice to
+              California State University San Marcos where I experience completely
+              different ways of learning and working.
             </p>
           </Reveal>
           <div className="off-screen">
             <h3>Away from the screen</h3>
             <p>
-              On a climbing wall, out on a hike, playing guitar or piano, or
-              making something out of wood.
+              When I am not working ou can find me in the mountains or in a
+              climbing gym. I also like building guitars and playing piano.
             </p>
           </div>
         </div>

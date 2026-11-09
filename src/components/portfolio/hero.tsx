@@ -5,14 +5,7 @@ export function Hero() {
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-intro">
         <p>
-          Fullstack developer.
-          <br />
-          An eye for design.
-        </p>
-        <p className="hero-note">
-          From the first idea
-          <br />
-          to the last interaction.
+          Hi! My name is
         </p>
       </div>
       <div className="hero-name">
@@ -25,9 +18,9 @@ export function Hero() {
       </div>
       <div className="hero-bottom">
         <p>
-          I build web and mobile experiences,
+          I build web and mobile applications,
           <br />
-          with care for how they work and feel.
+          with attention to details.
         </p>
         <a className="round-link" href="#projects">
           <span>Explore my work</span>
@@ -36,14 +29,6 @@ export function Hero() {
           </span>
         </a>
       </div>
-      <a
-        className="hero-social"
-        href="https://github.com/mck-d"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Find me on GitHub <ArrowUpRight size={16} />
-      </a>
     </section>
   )
 }

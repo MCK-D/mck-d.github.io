@@ -10,7 +10,7 @@ export const projects = [
   {
     name: "Jobigo",
     video: "/jobigo_showcase.mp4",
-    description: "An AI assistant for job seekers.",
+    description: "An AI powered monitoring assistant for job seekers.",
     year: "Ongoing",
     category: "Web & AI",
     tags: ["Next.js", "AI", "Tailwind CSS"],
@@ -19,14 +19,14 @@ export const projects = [
   {
     name: "HypurrOTC",
     video: "/hypurr_otc_showcase.mp4",
-    description: "An over-the-counter NFT trading platform.",
+    description: "An over-the-counter NFT trading platform on Hyperliquid.",
     year: "2025",
     category: "Web3",
     tags: ["React", "Smart contracts", "Web3"],
     color: "sage",
   },
   {
-    name: "Git GUI",
+    name: "GitUI",
     description: "A graphical interface for everyday Git workflows.",
     year: "2024",
     category: "Developer tools",
@@ -34,8 +34,8 @@ export const projects = [
     color: "sand",
   },
   {
-    name: "TrelloClone",
-    description: "Project planning and organisation software.",
+    name: "Planet",
+    description: "Project planning and organisation software made for people with ADHD.",
     year: "2024",
     category: "Web & mobile",
     tags: ["AdonisJS", "MySQL", "Flutter"],
@@ -61,29 +61,6 @@ export const archive = [
     description: "Code editor extension",
     tags: "Lua, VimScript",
     year: "2023",
-  },
-]
-
-export const experience = [
-  {
-    company: "Trusty",
-    role: "Fullstack developer intern",
-    place: "Paris, France",
-    year: "2025",
-    duration: "6 months",
-    description:
-      "Four web products. International clients including Qonto and Ledger. A complete Next.js rebuild of the Trusty web application, NestJS API development, and interfaces shaped by client feedback.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "NestJS", "MongoDB"],
-  },
-  {
-    company: "Skyhook",
-    role: "Mobile developer intern",
-    place: "Antony, France",
-    year: "2023",
-    duration: "6 months",
-    description:
-      "Four mobile apps for Manoova. Improved Moozik through advanced caching and state management, contributing to its growth to 100k+ downloads in six months. Built authentication and helped shape application architecture.",
-    tags: ["Flutter", "JavaScript", "UX/UI", "Webviews", "Optimization"],
   },
 ]
 
@@ -132,25 +109,27 @@ export const timeline = [
     id: "skyhook",
     title: "Skyhook",
     date: "2023",
-    kind: "Work",
-    role: "Mobile developer intern",
-    place: "Antony, France",
+    kind: "Internship",
+    role: "Mobile developer",
+    place: "Paris, France",
     note: "6 months",
-    summary: "Mobile apps built for real audiences.",
-    details: experience[1].description,
-    tags: experience[1].tags,
+    summary: "Worked with Madagascar's tech leader on three mobile apps",
+    details:
+      "Four mobile apps for Manoova. Improved the Moozik app through advanced caching and state management, contributing to its growth to 100k+ downloads in six months. Built authentication and helped shape application architecture.",
+    tags: ["Flutter", "JavaScript", "UX/UI", "Webviews", "Optimization"],
   },
   {
     id: "trusty",
     title: "Trusty",
     date: "2025",
-    kind: "Work",
-    role: "Fullstack developer intern",
+    kind: "Internship",
+    role: "Fullstack developer",
     place: "Paris, France",
     note: "6 months",
-    summary: "From client feedback to a complete rebuild.",
-    details: experience[0].description,
-    tags: experience[0].tags,
+    summary: "Worked as the CTO's right hand man to ship complex web apps",
+    details:
+      "Four web products, working with International clients including Qonto and Ledger. A complete Next.js rebuild of the main web application and NestJS API development.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "NestJS", "MongoDB"],
   },
   {
     id: "csusm",
@@ -160,7 +139,7 @@ export const timeline = [
     role: "Computer Science",
     place: "San Marcos, California",
     note: "August 2025 – May 2026",
-    summary: "A new place. A different perspective.",
+    summary: "Expanding my horizons during a year abroad",
     details:
       "Studied Computer Science at California State University San Marcos, with courses in data science, programming languages, web programming, cloud computing, and data structures & algorithms.",
     tags: ["Data science", "Cloud computing", "Algorithms"],
@@ -172,8 +151,8 @@ export const timeline = [
     kind: "Education",
     role: "Software Engineering & IT",
     place: "Nice, France",
-    note: "Expected graduation · GPA 3.26 / 4.00",
-    summary: "Engineering foundations, explored through practice.",
+    note: "Graduating in 2027",
+    summary: "Built practical software engineering knowledge through project based learning",
     details:
       "Software Engineering and Information Technology studies covering web development, networks, algorithms, DevOps, artificial intelligence, video games, and design patterns.",
     tags: ["Software engineering", "DevOps", "AI", "Design patterns"],

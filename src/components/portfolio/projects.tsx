@@ -15,7 +15,7 @@ export function Projects() {
       <div className="section-heading">
         <Reveal>
           <h2 id="work-title">
-            Selected work<span className="accent-dot">.</span>
+            Here is some of my work<span className="accent-dot">.</span>
           </h2>
         </Reveal>
         <p>
@@ -61,7 +61,7 @@ export function Projects() {
         aria-controls="project-archive"
       >
         <span>
-          {expanded ? "Close the archive" : "There’s more in the archive"}
+          {expanded ? "Close the archive" : "My older projects"}
         </span>
         <Plus aria-hidden="true" />
       </button>

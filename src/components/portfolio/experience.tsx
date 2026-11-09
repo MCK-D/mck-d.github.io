@@ -37,17 +37,15 @@ export function Experience() {
       <div className="timeline-heading">
         <Reveal>
           <h2 id="experience-title">
-            Learning
+            My journey
             <br />
-            by building.
+            so far.
           </h2>
         </Reveal>
         <div>
           <p>
-            Teams I’ve joined. Places I’ve learned.
-            <br />A journey through work and education.
+            Hover to see more.
           </p>
-          <span>Swipe through. Explore each stop.</span>
         </div>
       </div>
       <div className="timeline-stage">
