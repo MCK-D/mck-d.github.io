@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUpRight } from "lucide-react"
+import { ArrowDown } from "lucide-react"
 import { InteractiveName } from "./interactive-name"
 export function Hero() {
   return (

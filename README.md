@@ -27,6 +27,12 @@ The previews intentionally use empty, plain divs. Add your files to `public/proj
 
 There are no invented project URLs. Add verified project links to the data file when you are ready to link live work. The older projects are available through the expandable archive.
 
+## Search visibility
+
+The production build pre-renders the portfolio into HTML for search engines and
+visitors before JavaScript loads. See [SEO setup](docs/seo.md) for Google Search
+Console verification, sitemap submission, and indexing steps after deployment.
+
 ## Releases and Docker
 
 Push a version tag to deploy GitHub Pages, publish a container to GHCR, and

@@ -10,7 +10,9 @@ import LoadingCurtain from "./components/ui/loading-curtain"
 
 export function App() {
   const [introVisible, setIntroVisible] = useState(
-    () => !matchMedia("(prefers-reduced-motion: reduce)").matches
+    () =>
+      typeof window !== "undefined" &&
+      !matchMedia("(prefers-reduced-motion: reduce)").matches
   )
   const finishIntro = useCallback(() => setIntroVisible(false), [])
   return (
