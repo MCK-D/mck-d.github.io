@@ -28,15 +28,17 @@ export function Projects() {
         {projects.map((project, index) => (
           <Reveal
             key={project.name}
-            className={`project project-${index}`}
+            className={`project project-${index}${project.video ? "" : " project-compact"}`}
             delay={(index % 2) * 80}
           >
             <article>
-              <ProjectPreview
-                name={project.name}
-                color={project.color}
-                video={project.video}
-              />
+              {project.video && (
+                <ProjectPreview
+                  name={project.name}
+                  color={project.color}
+                  video={project.video}
+                />
+              )}
               <h3>{project.name}</h3>
               <div className="project-meta">
                 <span>{project.category}</span>

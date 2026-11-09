@@ -197,8 +197,20 @@ h2 {
 .project-1 {
   margin-top: 145px;
 }
-.project-3 {
-  margin-top: 145px;
+.project.project-compact {
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.project.project-compact h3 {
+  font-size: 24px;
+}
+.project.project-compact p {
+  color: var(--muted);
+  font-size: 14px;
+}
+.project-compact .tags {
+  margin-top: 14px;
+  font-size: 12px;
 }
 .project-preview {
   aspect-ratio: 16 / 10;
@@ -581,9 +593,6 @@ h2 {
   .archive-toggle:hover {
     color: var(--accent);
   }
-  .hero-stamp:hover svg {
-    animation-play-state: paused;
-  }
   .skill-tabs button:hover {
     background: var(--paper);
     color: var(--accent);
@@ -703,8 +712,7 @@ h2 {
     grid-template-columns: 1fr;
     gap: 45px;
   }
-  .project-1,
-  .project-3 {
+  .project-1 {
     margin-top: 0;
   }
   .project h3 {

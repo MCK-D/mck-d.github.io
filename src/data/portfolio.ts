@@ -51,12 +51,6 @@ export const archive = [
     year: "2023",
   },
   {
-    name: "Tech for Tourism",
-    description: "AMADEUS hackathon",
-    tags: "Project management, Figma, mockups",
-    year: "2023",
-  },
-  {
     name: "Let’s Watch",
     description: "For undecided movie enjoyers",
     tags: "Tailwind CSS, HTMX",
@@ -117,6 +111,10 @@ export const skills = {
   Databases: ["MySQL", "MongoDB"],
   Tools: [
     "Figma",
+    "Codex",
+    "Claude Code",
+    "MCP",
+    "Agent orchestration",
     "Git",
     "Bash",
     "Vim",
